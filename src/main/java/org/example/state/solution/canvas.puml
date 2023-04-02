@@ -1,0 +1,27 @@
+@startuml
+
+class Canvas {
+  currentTool
+  mouseDown()
+  mouseUp()
+}
+
+abstract Tool {
+      mouseDown()
+      mouseUp()
+}
+
+class Selection {
+      mouseDown()
+      mouseUp()
+}
+
+class Brush {
+      mouseDown()
+      mouseUp()
+}
+
+Canvas *-> Tool
+Tool <|-- Selection
+Tool <|-- Brush
+@enduml

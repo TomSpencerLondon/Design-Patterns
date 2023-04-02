@@ -1,0 +1,21 @@
+@startuml
+
+class Main {
+}
+
+class UIControl {
+    draw()
+}
+
+class TextBox {
+    draw()
+}
+
+class CheckBox {
+    draw()
+}
+
+Main .right.> UIControl
+UIControl *-- TextBox
+UIControl *-- CheckBox
+@enduml
