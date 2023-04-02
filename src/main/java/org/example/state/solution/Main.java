@@ -12,5 +12,8 @@ public class Main {
         canvas.mouseUp();
         canvas.mouseDown();
 
+        canvas.setCurrentTool(new EraserTool());
+        canvas.mouseUp();
+        canvas.mouseDown();
     }
 }
