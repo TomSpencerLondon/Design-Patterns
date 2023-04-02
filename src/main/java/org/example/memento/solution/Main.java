@@ -11,6 +11,7 @@ public class Main {
         history.push(editor.createState());
         editor.setContent("c");
         editor.restore(history.pop());
+        editor.restore(history.pop());
 
         System.out.println(editor.getContent());
     }
