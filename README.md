@@ -116,7 +116,7 @@ public class Canvas {
 The above application is difficult to extend. For instance if we want to add a circle tool then we have to
 change both methods. We would rather have the method behave differently depending on the current tool.
 
-![image](https://user-images.githubusercontent.com/27693622/229384052-5f3031c4-3896-414e-81b3-9698cef896a6.png)
+![image](https://user-images.githubusercontent.com/27693622/229384101-f871fbe5-a535-49c6-9cea-7f2560113c8b.png)
 
 The main class in the above example above calls the abstract class which behaves differently according to the selected state.
 
