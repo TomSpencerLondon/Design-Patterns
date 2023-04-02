@@ -1,0 +1,25 @@
+@startuml
+
+class Document {
+ content: String
+ fontName: String
+ fontSize: Integer
+ createState()
+ restore(state)
+}
+
+class DocumentState {
+    content: String
+    fontName: String
+    fontSize: int
+}
+
+class History {
+    states: List
+    push(state)
+    pop()
+}
+
+Document .right.> DocumentState
+DocumentState *-- History
+@enduml
