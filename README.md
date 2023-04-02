@@ -75,4 +75,4 @@ This class returns the current state and removes it from the list and can also r
 Below is another example of the Memento pattern with more attributes:
 ![image](https://user-images.githubusercontent.com/27693622/229382263-6dbb555c-fa68-46bb-9fc7-530dc1de2bc5.png)
 
-
+With the memento pattern we therefore have undoable actions on our classes as we are recording earlier states.
