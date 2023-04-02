@@ -16,6 +16,6 @@ class CheckBox {
 }
 
 Main .right.> UIControl
-UIControl *-- TextBox
-UIControl *-- CheckBox
+UIControl <|-- TextBox
+UIControl <|-- CheckBox
 @enduml
