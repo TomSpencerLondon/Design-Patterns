@@ -123,3 +123,5 @@ The main class in the above example above calls the abstract class which behaves
 We can apply this technique to our solution for the Canvas tool problem:
 
 ![image](https://user-images.githubusercontent.com/27693622/229383972-6ef7244b-d46e-4e71-a032-e9f5dca6fbb3.png)
+
+This application of the State pattern allows the object to behave differently depending on its state.
