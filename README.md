@@ -76,3 +76,42 @@ Below is another example of the Memento pattern with more attributes:
 ![image](https://user-images.githubusercontent.com/27693622/229382263-6dbb555c-fa68-46bb-9fc7-530dc1de2bc5.png)
 
 With the memento pattern we therefore have undoable actions on our classes as we are recording earlier states.
+
+### State Pattern
+The problem is how do we represent different states on a Canvas object:
+```java
+public class Canvas {
+
+    private ToolType currentTool;
+
+    public void mouseDown() {
+        if (currentTool == ToolType.SELECTION) {
+            System.out.println("Selection icon");
+        } else if (currentTool == ToolType.BRUSH) {
+            System.out.println("Brush icon");
+        } else if (currentTool == ToolType.ERASER) {
+            System.out.println("Eraser icon");
+        }
+    }
+
+    public void mouseUp() {
+        if (currentTool == ToolType.SELECTION) {
+            System.out.println("Draw dashed rectangle");
+        } else if (currentTool == ToolType.BRUSH) {
+            System.out.println("Draw a line");
+        } else if (currentTool == ToolType.ERASER) {
+            System.out.println("Eraser something");
+        }
+    }
+
+    public ToolType getCurrentTool() {
+        return currentTool;
+    }
+
+    public void setCurrentTool(ToolType currentTool) {
+        this.currentTool = currentTool;
+    }
+}
+```
+The above application is difficult to extend. For instance if we want to add a circle tool then we have to
+change both methods. We would rather have the method behave differently depending on the current tool.
