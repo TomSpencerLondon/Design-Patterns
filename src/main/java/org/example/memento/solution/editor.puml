@@ -1,0 +1,21 @@
+@startuml
+
+class Editor {
+ content: String
+ createState()
+ restore(state)
+}
+
+class EditorState {
+    content: String
+}
+
+class History {
+    states: List
+    push(state)
+    pop()
+}
+
+Editor .right.> EditorState
+EditorState *-- History
+@enduml

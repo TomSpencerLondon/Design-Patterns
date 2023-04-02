@@ -5,15 +5,15 @@ import java.util.List;
 
 public class Editor {
 
-    private List<String> content = new ArrayList<>();
+    private List<String> contents = new ArrayList<>();
     private int index = -1;
 
     public String getContent() {
-        return content.get(index);
+        return contents.get(index);
     }
 
-    public void setContent(String content) {
-        this.content.add(content);
+    public void setContent(String contents) {
+        this.contents.add(contents);
         index++;
     }
 

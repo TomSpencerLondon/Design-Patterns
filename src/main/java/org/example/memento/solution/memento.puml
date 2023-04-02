@@ -1,0 +1,21 @@
+@startuml
+
+class Originator {
+ content: String
+ createState()
+ restore(state)
+}
+
+class Memento {
+    content: String
+}
+
+class Caretaker {
+    states: List
+    push(state)
+    pop()
+}
+
+Originator .right.> Memento
+Memento *-- Caretaker
+@enduml
