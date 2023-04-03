@@ -1,45 +1,38 @@
 package org.example.iterator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BrowseHistory {
 
     private String[] urls = new String[10];
-    private int index;
+    private int count;
 
     public BrowseHistory() {
-        index = 0;
+        count = 0;
     }
 
     public void push(String url){
-        urls[index++] = url;
+        urls[count++] = url;
     }
 
     public String pop() {
-        int lastIndex = urls.length - 1;
-        String lastUrl = urls[lastIndex];
-        urls[lastIndex] = null;
-
-        return lastUrl;
+        return urls[--count];
     }
 
     public Iterator createIterator() {
-        return new ListIterator(this);
+        return new ArrayIterator(this);
     }
 
-    public class ListIterator implements Iterator<String> {
+    public class ArrayIterator implements Iterator<String> {
 
         private final BrowseHistory history;
         private int index;
 
-        public ListIterator(BrowseHistory history) {
+        public ArrayIterator(BrowseHistory history) {
             this.history = history;
         }
 
         @Override
         public boolean hasNext() {
-            return index < history.urls.length && history.urls[index] != null;
+            return index < history.count && history.urls[index] != null;
         }
 
         @Override
@@ -52,4 +45,5 @@ public class BrowseHistory {
             index++;
         }
     }
+
 }
