@@ -1,4 +1,4 @@
-### Design Patterns
+## Design Patterns
 
 #### Essential Key terms:
 - encapsulation
@@ -6,6 +6,7 @@
 - Inheritance
 - Polymorphism
 
+## Behavioural Design Patterns
 
 ### Memento Pattern
 ![image](https://user-images.githubusercontent.com/27693622/229380954-9c451226-e1d2-4dcf-9c10-615bac7507cc.png)
@@ -301,3 +302,43 @@ public class BrowseHistory {
 
 
 ```
+
+#### Strategy Pattern
+
+We may want to store images uploaded by users. This possible implementation violates the
+Single Responsibility Principle:
+```java
+public class ImageStorage {
+
+    private String compressor;
+    private String filter;
+
+    public ImageStorage(String compressor, String filter) {
+        this.compressor = compressor;
+        this.filter = filter;
+    }
+
+    public void store(String fileName) {
+        // Compression algorithm - JPEG, PNG, ...
+        // Filter B&W, High Contrast
+
+        if (compressor == "jpeg") {
+            System.out.println("Compressing using JPEG");
+        } else if (compressor == "png") {
+            System.out.println("Compressing using PNG");
+        }
+
+        if (filter == "b&w") {
+            System.out.println("Applying B&W filter");
+        } else if (filter == "high-contrast") {
+            System.out.println("Applying high contrast filter");
+        }
+    }
+}
+
+```
+The above implementation is responsible for Storing an Image and compressing the image and
+applying a filter. Compressing to jpeg could be up to 10 lines as would applying the filter.
+The implementation also makes it difficult to support new compressors and new filters.
+We could apply polymorphism here.
+
