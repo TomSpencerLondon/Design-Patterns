@@ -1,0 +1,10 @@
+@startuml
+
+class BrowseHistory {
+ push(url)
+ pop()
+ next()
+ current()
+ hasNext()
+}
+@enduml

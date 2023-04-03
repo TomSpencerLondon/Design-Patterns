@@ -1,0 +1,26 @@
+@startuml
+
+class BrowseHistory {
+
+ createIterator()
+ push(url)
+ pop()
+}
+
+interface Iterator {
+ next()
+ current()
+ hasNext()
+}
+
+class ListIterator {
+
+}
+
+class ArrayIterator {
+}
+
+BrowseHistory .right.> Iterator
+Iterator <|-- ListIterator
+Iterator <|-- ArrayIterator
+@enduml

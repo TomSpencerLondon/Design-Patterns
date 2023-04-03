@@ -133,3 +133,30 @@ Simplicity is the ultimate sophistication
 ```
 Leonardo DaVinci
 
+### Iterator Pattern
+Every browser has the concept of history. We want to implement this functionality.
+
+![image](https://user-images.githubusercontent.com/27693622/229511436-bd0ebda8-06e3-4a3d-9813-844fb652d0b6.png)
+
+We then use this code to avoid showing the internal working of the data structure storing urls on the BrowseHistory class.
+
+```java
+import org.example.iterator.BrowseHistory;
+
+class Main {
+    public static void main(String[] args) {
+        BrowseHistory history = new BrowseHistory();
+        while (history.hasNext) {
+            var current = history.current();
+            // print current
+            history.next();
+        }
+    }
+}
+```
+With the above structure we don't know the internal working of the BrowseHistory data structure.
+Also we should add the Iterator interface to move the responsibility of iteration from the BrowseHistory class:
+![image](https://user-images.githubusercontent.com/27693622/229513017-6594bfd9-8e2a-4d0d-92a2-ac91d0e82e3c.png)
+
+
+
