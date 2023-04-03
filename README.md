@@ -346,5 +346,8 @@ We can apply polymorphism here using the Strategy Pattern.
 This is the strategy pattern:
 ![image](https://user-images.githubusercontent.com/27693622/229623120-191e45e8-9fd2-42df-8488-8b41990b060c.png)
 
-The Context in the diagram contains a reference to the Strategy. The Strategy Pattern is similar to the State Pattern.
-The difference between the two patterns 
+The Context in the diagram contains a reference to the Strategy.
+
+### Template Method Pattern
+We may want to record all user activities in an audit trail for a banking application.
+
