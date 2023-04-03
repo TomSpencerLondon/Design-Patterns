@@ -158,5 +158,89 @@ With the above structure we don't know the internal working of the BrowseHistory
 Also we should add the Iterator interface to move the responsibility of iteration from the BrowseHistory class:
 ![image](https://user-images.githubusercontent.com/27693622/229513017-6594bfd9-8e2a-4d0d-92a2-ac91d0e82e3c.png)
 
+Now we can use the iterator to show each item in the BrowseHistory:
 
+```java
+public class Main {
+    public static void main(String[] args) {
+        BrowseHistory history = new BrowseHistory();
+        history.push("a");
+        history.push("b");
+        history.push("c");
 
+        Iterator iterator = history.createIterator();
+
+        while (iterator.hasNext()) {
+            String current = (String) iterator.current();
+            System.out.println(current);
+            iterator.next();
+        }
+    }
+}
+```
+The Iterator interface:
+```java
+
+public interface Iterator<T> {
+
+    boolean hasNext();
+    T current();
+    void next();
+}
+
+```
+
+The implementation of the Iterator interface is now declared inside the BrowseHistory class:
+```java
+package org.example.iterator;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BrowseHistory {
+
+    private List<String> urls = new ArrayList<>();
+
+    public void push(String url){
+        urls.add(url);
+    }
+
+    public String pop() {
+        int lastIndex = urls.size() - 1;
+        String lastUrl = urls.get(lastIndex);
+        urls.remove(lastUrl);
+
+        return lastUrl;
+    }
+
+    public Iterator createIterator() {
+        return new ListIterator(this);
+    }
+
+    public class ListIterator implements Iterator<String> {
+
+        private final BrowseHistory history;
+        private int index;
+
+        public ListIterator(BrowseHistory history) {
+            this.history = history;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index < history.urls.size();
+        }
+
+        @Override
+        public String current() {
+            return history.urls.get(index);
+        }
+
+        @Override
+        public void next() {
+            index++;
+        }
+    }
+}
+
+```
