@@ -1,0 +1,19 @@
+@startuml
+
+class Context {
+}
+
+interface Strategy {
+
+}
+
+class ConcreteStrategyA {
+}
+
+class ConcreteStrategyB {
+}
+
+Context *-> Strategy
+Strategy <|-- ConcreteStrategyA
+Strategy <|-- ConcreteStrategyB
+@enduml

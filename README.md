@@ -343,3 +343,8 @@ The implementation also makes it difficult to support new compressors and new fi
 We can apply polymorphism here using the Strategy Pattern.
 ![image](https://user-images.githubusercontent.com/27693622/229622392-23839ca9-b218-4e70-a21c-5fbd72de7d52.png)
 
+This is the strategy pattern:
+![image](https://user-images.githubusercontent.com/27693622/229623120-191e45e8-9fd2-42df-8488-8b41990b060c.png)
+
+The Context in the diagram contains a reference to the Strategy. The Strategy Pattern is similar to the State Pattern.
+The difference between the two patterns 
