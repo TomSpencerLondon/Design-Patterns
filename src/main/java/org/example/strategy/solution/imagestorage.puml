@@ -1,0 +1,41 @@
+@startuml
+
+class ImageStorage {
+    compressor
+    filter
+    store()
+}
+
+interface Compressor {
+    compress();
+}
+
+class JpegCompressor {
+    compress();
+}
+
+class PngCompressor {
+    compress();
+}
+
+interface Filter {
+    apply();
+}
+
+class BlackAndWhite {
+    apply();
+}
+
+class HighContrast {
+    apply();
+}
+
+ImageStorage *-> Compressor
+Compressor <|-- JpegCompressor
+Compressor <|-- PngCompressor
+
+ImageStorage *-left-> Filter
+Filter <|-- BlackAndWhite
+Filter <|-- HighContrast
+
+@enduml

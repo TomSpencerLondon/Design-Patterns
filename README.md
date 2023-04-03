@@ -340,5 +340,6 @@ public class ImageStorage {
 The above implementation is responsible for Storing an Image and compressing the image and
 applying a filter. Compressing to jpeg could be up to 10 lines as would applying the filter.
 The implementation also makes it difficult to support new compressors and new filters.
-We could apply polymorphism here.
+We can apply polymorphism here using the Strategy Pattern.
+![image](https://user-images.githubusercontent.com/27693622/229622392-23839ca9-b218-4e70-a21c-5fbd72de7d52.png)
 
