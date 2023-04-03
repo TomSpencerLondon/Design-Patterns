@@ -5,16 +5,21 @@ import java.util.List;
 
 public class BrowseHistory {
 
-    private List<String> urls = new ArrayList<>();
+    private String[] urls = new String[10];
+    private int index;
+
+    public BrowseHistory() {
+        index = 0;
+    }
 
     public void push(String url){
-        urls.add(url);
+        urls[index++] = url;
     }
 
     public String pop() {
-        int lastIndex = urls.size() - 1;
-        String lastUrl = urls.get(lastIndex);
-        urls.remove(lastUrl);
+        int lastIndex = urls.length - 1;
+        String lastUrl = urls[lastIndex];
+        urls[lastIndex] = null;
 
         return lastUrl;
     }
@@ -34,12 +39,12 @@ public class BrowseHistory {
 
         @Override
         public boolean hasNext() {
-            return index < history.urls.size();
+            return index < history.urls.length && history.urls[index] != null;
         }
 
         @Override
         public String current() {
-            return history.urls.get(index);
+            return history.urls[index];
         }
 
         @Override
