@@ -1,0 +1,17 @@
+@startuml
+
+abstract AbstractClass {
+    templateMethod()
+    == **Hooks** ==
+    primitiveOperation1()
+    primitiveOperation2()
+}
+
+class ConcreteClass {
+    primitiveOperation1()
+    primitiveOperation2()
+}
+
+AbstractClass <|-- ConcreteClass
+
+@enduml

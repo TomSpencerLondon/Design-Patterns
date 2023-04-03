@@ -350,4 +350,16 @@ The Context in the diagram contains a reference to the Strategy.
 
 ### Template Method Pattern
 We may want to record all user activities in an audit trail for a banking application.
+There are two possible solutions, we could use polymorphism and the Strategy pattern:
+![image](https://user-images.githubusercontent.com/27693622/229636175-fc4957f7-eb0b-4046-9d94-5fd0db832c9a.png)
+
+Alternatively, we could use inheritance and implement the template pattern:
+
+![image](https://user-images.githubusercontent.com/27693622/229645145-84ac1de9-71b4-438c-8460-afe34ec7d969.png)
+
+The TransferMoney and GenerateMoney override the doExecute() method and the Task execute() function contains the audit
+functionality as non-negotiable.
+
+![image](https://user-images.githubusercontent.com/27693622/229646403-bd6a84e6-f4a7-4e05-8c9a-f6650b6f0c5b.png)
+
 

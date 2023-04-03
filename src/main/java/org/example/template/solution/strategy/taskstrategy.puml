@@ -1,0 +1,25 @@
+@startuml
+
+class TaskExecutor {
+    execute(task)
+}
+
+note left
+  auditTrail.record()
+  task.execute()
+end note
+
+abstract Task {
+    execute()
+}
+
+class TransferMoney {
+}
+
+class GenerateReport {
+}
+
+TaskExecutor *-> Task
+Task <|-- TransferMoney
+Task <|-- GenerateReport
+@enduml
